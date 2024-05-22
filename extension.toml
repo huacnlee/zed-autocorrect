@@ -6,8 +6,6 @@ schema_version = 1
 authors = ["Jason Lee <huacnlee@gmail.com>"]
 repository = "https://github.com/huacnlee/zed-autocorrect"
 
-#he你好
-
 [language_servers.autocorrect]
 name = "AutoCorrect LSP Server"
 languages = [
@@ -32,3 +30,4 @@ languages = [
     "Plain Text",
     "Unknow",
 ]
+code_action_kinds = ["quickfix"]

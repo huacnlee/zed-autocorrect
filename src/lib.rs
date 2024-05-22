@@ -116,8 +116,6 @@ impl AutoCorrectExtension {
                 }
             }
 
-            //hello你好
-
             update_status(id, Status::None);
         }
 
