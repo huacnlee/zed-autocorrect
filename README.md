@@ -14,6 +14,16 @@ Based on AutoCorrect LSP server, you can use it to check and fix your text in re
 - Code Action to fix the text.
 - Automatically download AutoCorrect, if your system doesn't have it, otherwise use the existing one.
 
+## TODO
+
+- [ ] Formatting support.
+
+  Currently, the Zed extension can't allow us register multiple formatters for the same language.
+
+  For example the `markdown` language. Zed's default markdown formatter is `prettier`, and we can't register another formatter for it.
+
+- [ ] Following `.autocorrectrc` config in workspace (by LSP).
+
 ## Installation
 
 Open `Extensions` on your Zed, search for `AutoCorrect` and click on `Install`.
