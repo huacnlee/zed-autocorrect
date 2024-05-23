@@ -22,7 +22,7 @@ Based on AutoCorrect LSP server, you can use it to check and fix your text in re
 
   For example the `markdown` language. Zed's default markdown formatter is `prettier`, and we can't register another formatter for it.
 
-- [ ] Following `.autocorrectrc` config in workspace (by LSP).
+- [x] Following `.autocorrectrc` config in workspace (by LSP).
 
 ## Installation
 
