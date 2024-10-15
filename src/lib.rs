@@ -1,8 +1,8 @@
 use std::fs;
 use zed_extension_api::{self as zed, Result};
 
-static GITHUB_REPO: &'static str = "huacnlee/autocorrect";
-static BIN_NAME: &'static str = "autocorrect";
+const GITHUB_REPO: &str = "huacnlee/autocorrect";
+const BIN_NAME: &str = "autocorrect";
 
 struct AutoCorrectExtension {
     cached_binary_path: Option<String>,
@@ -112,7 +112,7 @@ impl AutoCorrectExtension {
             for entry in entries {
                 let entry = entry.map_err(|e| format!("failed to load directory entry {e}"))?;
                 if entry.file_name().to_str() != Some(&version_dir) {
-                    fs::remove_dir_all(&entry.path()).ok();
+                    fs::remove_dir_all(entry.path()).ok();
                 }
             }
 
@@ -138,9 +138,8 @@ impl zed::Extension for AutoCorrectExtension {
     ) -> Result<zed::Command> {
         let command = self
             .language_server_binary_path(id, worktree)
-            .map_err(|err| {
+            .inspect_err(|err| {
                 update_status(id, Status::Failed(err.to_string()));
-                err
             })?;
 
         Ok(zed::Command {
