@@ -1,5 +1,7 @@
 # AutoCorrect for Zed
 
+[![Zed Extension](https://img.shields.io/badge/-Zed_Extension-blue?style=flat&logo=zedindustries&logoColor=%23FFFFFF&logoSize=auto&labelColor=%23111111&color=%23084CCF)](https://zed.dev/extensions/autocorrect)
+
 [AutoCorrect](https://github.com/huacnlee/autocorrect) is a linter and formatter to help you to improve copywriting, correct spaces, words, and punctuations between CJK (Chinese, Japanese, Korean).
 
 <img alt="image" src="https://github.com/huacnlee/zed-autocorrect/assets/5518/762c70e4-961b-4a9d-850c-5768389c459b">
