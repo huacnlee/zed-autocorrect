@@ -66,7 +66,7 @@ impl AutoCorrectExtension {
             GITHUB_REPO,
             zed::GithubReleaseOptions {
                 require_assets: true,
-                pre_release: true,
+                pre_release: false,
             },
         )?;
 
