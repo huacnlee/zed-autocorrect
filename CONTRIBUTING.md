@@ -2,8 +2,6 @@
 
 You must install [zed-extension](https://github.com/zed-industries/zed/tree/main/crates/extension_cli) cli first.
 
-hello你好
-
 ## Release
 
 1. Update the version in `Cargo.toml` and `extension.toml`.

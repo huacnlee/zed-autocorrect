@@ -1,7 +1,7 @@
 id = "autocorrect"
 name = "AutoCorrect"
 description = "AutoCorrect is a linter and formatter to help you to improve copywriting, correct spaces, words, and punctuations between CJK (Chinese, Japanese, Korean)."
-version = "0.1.0"
+version = "0.1.1"
 schema_version = 1
 authors = ["Jason Lee <huacnlee@gmail.com>"]
 repository = "https://github.com/huacnlee/zed-autocorrect"
