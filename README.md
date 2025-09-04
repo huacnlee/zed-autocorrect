@@ -1,5 +1,7 @@
 # AutoCorrect for Zed
 
+[![Zed Extension](https://img.shields.io/badge/-Zed_Extension-blue?style=flat&logo=zedindustries&logoColor=%23FFFFFF&logoSize=auto&labelColor=%23111111&color=%23084CCF)](https://zed.dev/extensions/autocorrect)
+
 [AutoCorrect](https://github.com/huacnlee/autocorrect) is a linter and formatter to help you to improve copywriting, correct spaces, words, and punctuations between CJK (Chinese, Japanese, Korean).
 
 <img alt="image" src="https://github.com/huacnlee/zed-autocorrect/assets/5518/762c70e4-961b-4a9d-850c-5768389c459b">
@@ -22,7 +24,7 @@ Based on AutoCorrect LSP server, you can use it to check and fix your text in re
 
   For example the `markdown` language. Zed's default markdown formatter is `prettier`, and we can't register another formatter for it.
 
-- [ ] Following `.autocorrectrc` config in workspace (by LSP).
+- [x] Following `.autocorrectrc` config in workspace (by LSP).
 
 ## Installation
 
