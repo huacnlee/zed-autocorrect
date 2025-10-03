@@ -1,6 +1,7 @@
 /**
  * Hello你好
  * 这是第2行
+ * This line is a typ check.
  */
 function application() {
   let example = "这是single line单行注释";
