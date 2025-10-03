@@ -2,9 +2,9 @@
 
 [![Zed Extension](https://img.shields.io/badge/-Zed_Extension-blue?style=flat&logo=zedindustries&logoColor=%23FFFFFF&logoSize=auto&labelColor=%23111111&color=%23084CCF)](https://zed.dev/extensions/autocorrect)
 
-[AutoCorrect](https://github.com/huacnlee/autocorrect) is a linter and formatter to help you to improve copywriting, correct spaces, words, and punctuations between CJK (Chinese, Japanese, Korean).
+[AutoCorrect](https://github.com/huacnlee/autocorrect) is a linter and formatter to help you to improve copywriting, correct spaces, words, and punctuations between CJK (Chinese, Japanese, Korean). And use [typos](https://github.com/crate-ci/typos) for spellcheck.
 
-<img alt="image" src="https://github.com/huacnlee/zed-autocorrect/assets/5518/762c70e4-961b-4a9d-850c-5768389c459b">
+<img alt="image" src="https://github.com/user-attachments/assets/38697c59-be3f-4479-8351-d391d97bdb65">
 
 Based on AutoCorrect LSP server, you can use it to check and fix your text in real-time.
 
