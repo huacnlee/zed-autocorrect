@@ -53,15 +53,32 @@ impl AutoCorrectExtension {
                 return Ok(path.clone());
             }
         }
-        let (platform, arch) = zed::current_platform();
 
-        if fs::metadata(BIN_NAME).map_or(false, |stat| stat.is_file()) {
-            update_status(id, Status::None);
-            return Ok(BIN_NAME.to_string());
+        if let Some(binary_path) = Self::check_installed() {
+            // silent to check for update.
+            let _ = Self::check_to_update(&id);
+            return Ok(binary_path);
         }
 
-        update_status(id, Status::CheckingForUpdate);
+        let binary_path = Self::check_to_update(id)?;
+        self.cached_binary_path = Some(binary_path.clone());
+        Ok(binary_path)
+    }
 
+    fn check_installed() -> Option<String> {
+        let entries = fs::read_dir(".").ok()?;
+        for entry in entries.flatten().filter(|entry| entry.path().is_dir()) {
+            let binary_path = entry.path().join(BIN_NAME);
+            if fs::metadata(&binary_path).map_or(false, |stat| stat.is_file()) {
+                return binary_path.to_str().map(|s| s.to_string());
+            }
+        }
+        None
+    }
+
+    fn check_to_update(id: &zed::LanguageServerId) -> Result<String> {
+        update_status(id, Status::CheckingForUpdate);
+        let (platform, arch) = zed::current_platform();
         let release = zed::latest_github_release(
             GITHUB_REPO,
             zed::GithubReleaseOptions {
@@ -119,7 +136,6 @@ impl AutoCorrectExtension {
             update_status(id, Status::None);
         }
 
-        self.cached_binary_path = Some(binary_path.clone());
         Ok(binary_path)
     }
 }
