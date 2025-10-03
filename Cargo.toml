@@ -1,13 +1,13 @@
 [package]
 name = "zed-autocorrect"
-version = "0.1.2"
+version = "0.2.0"
 edition = "2021"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
-zed_extension_api = "^0.1.0"
+zed_extension_api = "^0.7.0"
 
 [profile.release]
 codegen-units = 1 # Allows LLVM to perform better optimization.
