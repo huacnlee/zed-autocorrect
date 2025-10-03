@@ -2,7 +2,7 @@
 
 [![Zed Extension](https://img.shields.io/badge/-Zed_Extension-blue?style=flat&logo=zedindustries&logoColor=%23FFFFFF&logoSize=auto&labelColor=%23111111&color=%23084CCF)](https://zed.dev/extensions/autocorrect)
 
-[AutoCorrect](https://github.com/huacnlee/autocorrect) is a linter and formatter to help you to improve copywriting, correct spaces, words, and punctuations between CJK (Chinese, Japanese, Korean). And use [typos](https://github.com/crate-ci/typos) for spellcheck.
+[AutoCorrect](https://github.com/huacnlee/autocorrect) is a linter and formatter to help you to check spell typos, correct spaces, words, and punctuations between CJK (Chinese, Japanese, Korean).
 
 <img alt="image" src="https://github.com/user-attachments/assets/38697c59-be3f-4479-8351-d391d97bdb65">
 
@@ -12,6 +12,8 @@ Based on AutoCorrect LSP server, you can use it to check and fix your text in re
 
 ## Features
 
+- English spell check.
+- CJK (Chinese, Japanese, Korean) punctuation and spacing correction.
 - Lint text in real-time.
 - Code Action to fix the text.
 - Automatically download AutoCorrect, if your system doesn't have it, otherwise use the existing one.
