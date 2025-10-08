@@ -1,7 +1,7 @@
 id = "autocorrect"
 name = "AutoCorrect"
 description = "AutoCorrect is a linter and formatter to help you to spellcheck typos, correct spaces, words, and punctuations between CJK."
-version = "0.2.0"
+version = "0.2.1"
 schema_version = 1
 authors = ["Jason Lee <huacnlee@gmail.com>"]
 repository = "https://github.com/huacnlee/zed-autocorrect"
