@@ -12,8 +12,8 @@ Based on AutoCorrect LSP server, you can use it to check and fix your text in re
 
 ## Features
 
-- English spell check.
 - CJK (Chinese, Japanese, Korean) punctuation and spacing correction.
+- English spellcheck.
 - Lint text in real-time.
 - Code Action to fix the text.
 - Automatically download AutoCorrect, if your system doesn't have it, otherwise use the existing one.
