@@ -1,6 +1,6 @@
 id = "autocorrect"
 name = "AutoCorrect"
-description = "AutoCorrect is a linter and formatter to help you to check spell typos, correct spaces, words, and punctuations between CJK (Chinese, Japanese, Korean)."
+description = "AutoCorrect is a linter and formatter to help you to spellcheck typos, correct spaces, words, and punctuations between CJK."
 version = "0.2.0"
 schema_version = 1
 authors = ["Jason Lee <huacnlee@gmail.com>"]
@@ -28,6 +28,6 @@ languages = [
     "Go",
     "SQL",
     "Plain Text",
-    "Unknow",
+    "Unknown",
 ]
 code_action_kinds = ["quickfix"]
