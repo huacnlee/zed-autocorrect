@@ -2,7 +2,15 @@ use std::fs;
 use zed_extension_api::{self as zed, Result};
 
 const GITHUB_REPO: &str = "huacnlee/autocorrect";
-const BIN_NAME: &str = "autocorrect";
+
+#[inline]
+fn bin_name() -> &'static str {
+    if zed::current_platform().0 == zed::Os::Windows {
+        "autocorrect.exe"
+    } else {
+        "autocorrect"
+    }
+}
 
 struct AutoCorrectExtension {
     cached_binary_path: Option<String>,
@@ -43,7 +51,7 @@ impl AutoCorrectExtension {
         worktree: &zed::Worktree,
     ) -> Result<String> {
         // Check if the binary is already installed by manually checking the path
-        if let Some(path) = worktree.which(BIN_NAME) {
+        if let Some(path) = worktree.which(bin_name()) {
             return Ok(path);
         }
 
@@ -68,7 +76,7 @@ impl AutoCorrectExtension {
     fn check_installed() -> Option<String> {
         let entries = fs::read_dir(".").ok()?;
         for entry in entries.flatten().filter(|entry| entry.path().is_dir()) {
-            let binary_path = entry.path().join(BIN_NAME);
+            let binary_path = entry.path().join(bin_name());
             if fs::metadata(&binary_path).map_or(false, |stat| stat.is_file()) {
                 return binary_path.to_str().map(|s| s.to_string());
             }
@@ -110,17 +118,18 @@ impl AutoCorrectExtension {
             _ => zed::DownloadedFileType::GzipTar,
         };
 
-        let asset = release
-            .assets
-            .iter()
-            .find(|asset| asset.name == asset_name)
-            .ok_or_else(|| format!("no asset found matching {:?}", asset_name))?;
-
         let version_dir = format!("autocorrect-{}", release.version);
-        let binary_path = format!("{version_dir}/{BIN_NAME}");
+        let bin_name = bin_name();
+        let binary_path = format!("{version_dir}/{bin_name}");
 
         if !fs::metadata(&binary_path).map_or(false, |stat| stat.is_file()) {
             update_status(id, Status::Downloading);
+
+            let asset = release
+                .assets
+                .iter()
+                .find(|asset| asset.name == asset_name)
+                .ok_or_else(|| format!("no asset found matching {:?}", asset_name))?;
             zed::download_file(&asset.download_url, &version_dir, file_type)
                 .map_err(|e| format!("failed to download file: {e}"))?;
 
